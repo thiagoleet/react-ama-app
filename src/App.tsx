@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Toaster } from "sonner";
 import { CreateRoom } from "./pages/CreateRoom";
 import { Room } from "./pages/Room";
 
@@ -14,5 +15,13 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />;
+      <Toaster
+        invert
+        richColors
+      />
+    </>
+  );
 }

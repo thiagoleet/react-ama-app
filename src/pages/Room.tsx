@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import AmaLogo from "../assets/ama-logo.svg";
 import { ArrowRight, ArrowUp, Share2 } from "lucide-react";
+import { toast } from "sonner";
 
 export function Room() {
   const { roomId } = useParams();
@@ -13,6 +14,8 @@ export function Room() {
     } else {
       navigator.clipboard.writeText(url);
     }
+
+    toast.info("Link da sala copiado para a área de transferência.");
   }
 
   return (
