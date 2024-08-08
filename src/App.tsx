@@ -1,3 +1,18 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { CreateRoom } from "./pages/CreateRoom";
+import { Room } from "./pages/Room";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <CreateRoom />,
+  },
+  {
+    path: "/rooms/:roomId",
+    element: <Room />,
+  },
+]);
+
 export function App() {
-  return <h1>Hello World</h1>;
+  return <RouterProvider router={router} />;
 }
