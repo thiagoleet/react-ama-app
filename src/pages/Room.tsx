@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import AmaLogo from "../assets/ama-logo.svg";
-import { ArrowRight, ArrowUp, Share2 } from "lucide-react";
+import { ArrowRight, Share2 } from "lucide-react";
 import { toast } from "sonner";
+import { Message } from "../components/Message";
 
 export function Room() {
   const { roomId } = useParams();
@@ -61,26 +62,19 @@ export function Room() {
       </form>
 
       <ol className="list-decimal list-outside px-3 space-y-8">
-        <li className="ml-4 leading-relaxed text-zinc-100">
-          Conteúdo da pergunta
-          <button
-            type="button"
-            className="mt-3 flex items-center gap-2 text-orange-400 text-sm font-medium hover:text-zinc-300"
-          >
-            <ArrowUp className="size-4" />
-            Curtir pergunta (42)
-          </button>
-        </li>
-        <li className="ml-4 leading-relaxed text-zinc-100">
-          Conteúdo da pergunta
-          <button
-            type="button"
-            className="mt-3 flex items-center gap-2 text-zinc-400 text-sm font-medium hover:text-orange-500"
-          >
-            <ArrowUp className="size-4" />
-            Curtir pergunta (42)
-          </button>
-        </li>
+        <Message
+          text="Conteúdo da Pergunta"
+          ammountOfReactions={10}
+        />
+        <Message
+          text="Conteúdo da Pergunta"
+          ammountOfReactions={10}
+          answered
+        />
+        <Message
+          text="Conteúdo da Pergunta"
+          ammountOfReactions={10}
+        />
       </ol>
     </div>
   );
